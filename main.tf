@@ -39,7 +39,6 @@ module "ec2-dockerhost" {
   monitoring             = true
   vpc_security_group_ids = [module.sgp-dockerhost.security_group_id]
   subnet_id              = "subnet-062e7f91018671821"
-  user_data              = file("dependencias.sh")
   tags = {
     Terraform = "true"
   }
