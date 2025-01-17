@@ -34,11 +34,11 @@ module "ec2-dockerhost" {
   version                = "~> 3.0"
   name                   = "tcloud-ec2-dockerhost"
   ami                    = data.aws_ami.ami-servers.id
-  instance_type          = "t3.micro"
-  key_name               = "vockey"
+  instance_type          = "t3.medium"
+  key_name               = "sshkey"
   monitoring             = true
   vpc_security_group_ids = [module.sgp-dockerhost.security_group_id]
-  subnet_id              = "subnet-062e7f91018671821"
+  subnet_id              = "subnet-033557dfdbbedbcef"
   user_data              = file("dependencias.sh")
   tags = {
     Terraform = "true"
